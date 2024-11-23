@@ -5,16 +5,15 @@
 #include <string>
 #include <cstring>
 #include "wifi.hpp"
+#include "ota.hpp"
 
 
 #define MSG_BUFFER_SIZE  (50)
 
-const char* mqtt_server = "YOUR_BROKER";
-const char* mqtt_user = "YOUR_USER";
-const char* mqtt_password = "YOUR_PASSWORD";
-
 extern WiFiClientSecure LABCONTROL;
 extern PubSubClient client;
+
+extern float setTemp;
 
 void reconnect();
 
@@ -24,6 +23,6 @@ void callback(char* topic, byte* payload, unsigned int length);
 
 void loop_mqtt();
 
-void publish_dht11(float temp, float hum);
+void publish_dht11(float temp, float hum, const char* date);
 
 #endif

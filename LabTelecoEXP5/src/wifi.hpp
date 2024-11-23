@@ -5,11 +5,7 @@
 #include <WiFiClientSecure.h>
 #include <WiFiUdp.h>
 
-const char* ssid = "YOUR_SSID";
-const char* password = "YOUR_PSSWD";
-
-
-int i;
+extern WiFiClientSecure LABCONTROL;
 
 void setup_wifi();
 

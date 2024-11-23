@@ -2,11 +2,11 @@
 #define OTA_h
 
 #include <Arduino.h>
-#include <WiFi.h>
+#include "wifi.hpp"
 #include <HTTPClient.h>
 #include <HTTPUpdate.h>
 
-void updateOTA(char url[]);
+void update_ota(char url[]);
 
 
 #endif

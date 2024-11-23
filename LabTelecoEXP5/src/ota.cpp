@@ -1,14 +1,13 @@
 #include "OTA.hpp"
 
 
-void updateOTA(char url[]){
-	WiFiClient client;
+void update_ota(char url[]){
 	Serial.println("OTA Updating SPIFFS...");
-
-	t_httpUpdate_return ret = httpUpdate.updateSpiffs(client, url);
+	LABCONTROL.setTimeout(12000); // Set a 12-second timeout for HTTPS connection
+	t_httpUpdate_return ret = httpUpdate.updateSpiffs(LABCONTROL, url);
 	if (ret == HTTP_UPDATE_OK) {
 		Serial.println("OTA Updating sketch...");
-		ret = httpUpdate.update(client, url);
+		ret = httpUpdate.update(LABCONTROL, url);
 
 		switch (ret) {
 			case HTTP_UPDATE_FAILED:

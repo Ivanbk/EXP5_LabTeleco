@@ -1,6 +1,12 @@
 
 #include "wifi.hpp"
 
+
+//Definitions
+const char* ssid = "internoTucar";
+const char* password = "PUeLeTyPeLoWNsHU2";
+
+
 WiFiClientSecure LABCONTROL;
 
 void setup_wifi() {

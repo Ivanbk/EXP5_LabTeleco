@@ -10,6 +10,6 @@ void IRAM_ATTR onTimer(){
 void setupTimer(){
     my_timer = timerBegin(1, 800, true);
     timerAttachInterrupt(my_timer, &onTimer, true);
-    timerAlarmWrite(my_timer, 200000, true);
+    timerAlarmWrite(my_timer, 1000000, true);
     timerAlarmEnable(my_timer);
 }
